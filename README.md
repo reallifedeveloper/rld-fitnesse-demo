@@ -1,18 +1,18 @@
 RLD-FITNESSE-DEMO
 =================
 
-A demo project to show how you can use Specification by Example and the tool FitNesse to work in a test-driven way, starting from functional tests in the form of FitNesse examples.
+A demo project to show how you can use [Specification by Example](https://en.wikipedia.org/wiki/Specification_by_example) and the tool [FitNesse](https://en.wikipedia.org/wiki/FitNesse) to work in a test-driven way, starting from functional tests in the form of FitNesse examples.
 
-The basic idea of the demo is to implement the `RecordService.addRecordEntry` method for an Electronic Health Records system. Please note that the requirements are very simplified and not realistic; the purpose of the demo is to show how you can go from requirements to FitNesse examples to working code.
+The basic idea of the demo is to implement the `RecordService.addRecordEntry` method for an Electronic Health Records system. Please note that the requirements are very simplified and not realistic; the purpose of the demo is to show how you can go from requirements to FitNesse examples to working code, not to implement a real Electonic Health Records system.
 
 Running the Demo
 ----------------
 
-You run demo by starting the FitNesse wiki by giving the following command from the root directory of the `rld-fitnesse-demo` project:
+You run the demo by starting the FitNesse wiki using the following command from the root directory of the `rld-fitnesse-demo` project:
 
     mvn -P fitnesse-wiki verify
 
-Open a web browser at <http://localhost:8181/FitNesseDemo>. There is a test suite called `Electronic Health Record` that currently only contains one test page, `AddingInformation`. Navigate to the `AddingInformation` page, which currently only contains a header. Press the `Edit` button to make changes to the page.
+Open a web browser at <http://localhost:8181/FitNesseDemo>. There is a test suite called `Electronic Health Record` that currently only contains one test page, `Adding Information`. Navigate to the `Adding Information` page, which currently only contains a header. Press the `Edit` button when you want to make changes to the page.
 
 In your favorite IDE, open the `rld-fitnesse-demo` project. Any changes you make to the code should be immediately visible when you run the FitNesse tests by pressing the `Test` button in the FitNesse web page.
 
@@ -68,7 +68,7 @@ We run the test again. Success!
 
 Next, we want to add some authorization to the `addRecordEntry` method so that only doctors can add records while nurses cannot. (This is probably a completely nonsensical requirement in a real system.)
 
-To create a FitNesse test for this, we could create another user that is a nurse, and have that user try to add a record. This should fail with some nice error message, and the entry should not be added. To verify that the entry was not added, we could have the doctor add another record entry for the same patient, and then check that the two entries from the doctor are available, while the entry from the nurse is not.
+To create a FitNesse test for this, we can create another user that is a nurse, and have that user try to add a record. This should fail with some nice error message, and the entry should not be added. To verify that the entry was not added, we could have the doctor add another record entry for the same patient, and then check that the two entries from the doctor are available, while the entry from the nurse is not.
 
 While we're at it, we could improve the `Add Record Entry` FitNesse table to also verify that the error message we get when a nurse tries to add a record is correct. In total, the FitNesse page `AddingInformation` now looks like this:
 
