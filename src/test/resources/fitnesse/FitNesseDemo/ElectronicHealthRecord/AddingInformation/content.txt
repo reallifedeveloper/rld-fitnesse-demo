@@ -1,0 +1,22 @@
+!1 Adding Information to an Electronic Health Record
+
+!|Add User|
+|userId    |role names|
+|drJekyll  |DOCTOR|
+|nurseJacky|NURSE|
+
+!|Add Patient|
+|patientId|first name|last name|
+|4711     |Patient   |Zero     |
+
+!|Add Record Entry|
+|userId  |patientId|entry|error message?|
+|drJekyll|4711     |This guy is sick||
+|nurseJacky|4711   |Can I get away with this?|Only doctors can add records|
+|drJekyll|4711     |No, his faking||
+
+!|Verify Record Entries|
+|patientId|index|entry?|
+|4711     |0    |This guy is sick|
+|4711     |1    |No, his faking  |
+

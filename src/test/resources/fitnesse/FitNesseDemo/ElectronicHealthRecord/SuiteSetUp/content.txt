@@ -1,0 +1,6 @@
+|import|
+|com.reallifedeveloper.demo.fitnesse|
+
+!|Insert Reference Data|
+|filename|
+|/dbunit/role.xml|
