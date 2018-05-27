@@ -6,10 +6,12 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.dbunit.DatabaseUnitException;
+import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.datatype.IDataTypeFactory;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 
@@ -34,6 +36,8 @@ public class InsertReferenceData extends AbstractFitNesseFixture {
 	private IDatabaseConnection getConnection() throws DatabaseUnitException, SQLException {
 		DataSource ds = getBean(DataSource.class);
 		IDatabaseConnection connection = new DatabaseConnection(ds.getConnection());
+		IDataTypeFactory dataTypeFactory = getBean(IDataTypeFactory.class);
+		connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, dataTypeFactory);
 		return connection;
 	}
 
