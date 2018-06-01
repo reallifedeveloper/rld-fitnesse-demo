@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.reallifedeveloper</groupId>
-    <artifactId>fitnesse-demo</artifactId>
+    <artifactId>rld-fitnesse-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>FitNesse Demo</name>
